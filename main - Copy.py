@@ -41,7 +41,7 @@ para = textwrap.wrap(astr, width=15)
 MAX_W, MAX_H = 1200, 1200
 img = Image.open(filepath)
 draw = ImageDraw.Draw(img)
-font = ImageFont.truetype("C:\\Users\\HP\\Documents\\pythonProject\\BeautyMountainsPersonalUse-od7z.ttf", 120)
+font = ImageFont.truetype("C:\\Users\\HP\\Documents\\pythonProject\\BeautyMountainsPersonalUse-od7z.ttf", 148)
 
 current_h, pad = 50, 10
 for line in para:
