@@ -1,3 +1,9 @@
+"""
+Find
+username = 'username', password = 'password'
+and replace with your own Instagram credentials
+"""
+
 # pillow imports
 from PIL import Image
 from PIL import ImageFont
