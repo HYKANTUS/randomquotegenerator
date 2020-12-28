@@ -1,9 +1,3 @@
-"""
-Find
-username = 'username', password = 'password'
-and replace with your own Instagram credentials
-"""
-
 # pillow imports
 from PIL import Image
 from PIL import ImageFont
@@ -15,6 +9,12 @@ import os
 import string
 from instabot import Bot
 import textwrap
+from getpass import getpass
+import sys
+import time
+
+account = '_randomquotegenerator_1_'
+password = 'Dipper14725'
 
 # random image file
 path = "C:\\Users\\HP\\Documents\\pythonProject\\input"
@@ -69,13 +69,11 @@ photo = image
 
 print(f'output photo chosen. File: {photo}')
 
-username = 'username'
-password = 'password'
+username = account
+password = password
 
 bot.login(username=username,
           password=password)
-
-print(f'logged into instagram account. Account: {username}')
 
 caption = 'Randomly generated image. Made in Python using the Pillow library. Script by Hykantus. '
 
@@ -83,3 +81,11 @@ bot.upload_photo(photo,
                  caption=caption)
 
 print(f'successfully posted image with caption. Caption: {caption}')
+
+print('sleeping for 900 seconds (15 mins)\nCountdown until the next time this script will run: ')
+for remaining in range(900, 0, -1):
+    sys.stdout.write("\r")
+    sys.stdout.write("{:2d} seconds remaining.".format(remaining))
+    sys.stdout.flush()
+    time.sleep(1)
+sys.stdout.write("\rComplete. Running Code again now:             \n")
