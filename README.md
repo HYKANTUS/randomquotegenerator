@@ -10,6 +10,9 @@
 ### If you would like to see examples of the code in action, check the instagram accounts below:
 
 @_randomquotegenerator_
+
 @_randomquotegenerator_1_
+
 https://www.instagram.com/_randomquotegenerator_/
+
 https://www.instagram.com/_randomquotegenerator_1_/
