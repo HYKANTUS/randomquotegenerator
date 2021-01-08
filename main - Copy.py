@@ -13,8 +13,8 @@ from getpass import getpass
 import sys
 import time
 
-account = '_randomquotegenerator_1_'
-password = 'Dipper14725'
+account = 'account_name_here'
+password = 'password_here'
 
 # random image file
 path = "C:\\Users\\HP\\Documents\\pythonProject\\input"
