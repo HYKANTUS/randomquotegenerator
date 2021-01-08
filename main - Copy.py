@@ -13,14 +13,14 @@ from getpass import getpass
 import sys
 import time
 
-account = 'account_name_here'
-password = 'password_here'
+account = 'account_name'
+password = 'account_password'
 
 # random image file
-path = "C:\\Users\\HP\\Documents\\pythonProject\\input"
+path = "input"
 files = os.listdir(path)
 file = random.choice(files)
-filepath = 'C:\\Users\\HP\\Documents\\pythonProject\\input\\' + file
+filepath = 'input\\' + file
 
 print(f'random file found. File: {filepath}')
 
@@ -47,17 +47,19 @@ para = textwrap.wrap(astr, width=15)
 MAX_W, MAX_H = 1200, 1200
 img = Image.open(filepath)
 draw = ImageDraw.Draw(img)
-font = ImageFont.truetype("C:\\Users\\HP\\Documents\\pythonProject\\BeautyMountainsPersonalUse-od7z.ttf", 148)
+font = ImageFont.truetype("BeautyMountainsPersonalUse-od7z.ttf", 148)
 
-current_h, pad = 50, 10
-for line in para:
-    w, h = draw.textsize(line, font=font)
-    draw.text(((MAX_W - w) / 2, current_h), line, font=font)
-    current_h += h + pad
+line_dimensions = [draw.textsize(line, font=font) for line in para]
+offset = (MAX_H - sum(h for w, h in line_dimensions)) // 2
+
+current_h = offset
+for line, (w, h) in zip(para, line_dimensions):
+    draw.text(((MAX_W - w) // 2, current_h), line, font=font)
+    current_h += h
 
 print(f'quote written on image')
 
-directory = 'C:\\Users\\HP\\Documents\\pythonProject\\output\\'
+directory = 'output\\'
 filename = f'output{id_generator()}.jpg'
 img.save(directory + filename)
 image = directory + filename
@@ -75,7 +77,7 @@ password = password
 bot.login(username=username,
           password=password)
 
-caption = 'Randomly generated image. Made in Python using the Pillow library. Script by Hykantus. '
+caption = 'Randomly generated image. Made in Python using the Pillow library. Script by Hykantus. #quotes #love #motivation #life #inspiration #quoteoftheday #instagram #motivationalquotes #instagood #quote #follow #bhfyp #like #happiness #positivevibes #success #believe #loveyourself #lifestyle #selflove #inspirationalquotes #happy #lovequotes #yourself #poetry #mindset #goals #quotestagram #quotestoliveby #bhfyp'
 
 bot.upload_photo(photo,
                  caption=caption)
